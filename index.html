@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gatitooos</title>
+</head>
+<body>
+    <h1>who's the princess of kittytown</h1>
+    <button onclick="get()">¿??</button>
+    <img src="" alt="">
+    <div id="caja"></div>
+     <script>
+        function get(){
+            fetch('https://api.thecatapi.com/v1/images/search')
+            .then(res => res.json())
+            .then(data => {
+                const caja = document.getElementById('caja')
+                const img = document.createElement('img')
+
+                caja.innerHTML = ''
+                caja.appendChild(img)
+                img.src = data[0].url
+            })
+        }
+    </script>
+</body>
+</html>
